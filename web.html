@@ -1,0 +1,165 @@
+Sure, I've added the footer back and adjusted the styles to make the content scrollable to the bottom. Here's the updated HTML:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>makoty</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            text-align: center; /* Center align all text */
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid #00FF41;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999; /* Ensure header stays on top */
+        }
+        .social-media-links {
+            margin-bottom: 20px;
+        }
+        .social-media-links a {
+            color: #00FF41;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        .social-media-links a:hover {
+            color: #fff;
+        }
+        main {
+            padding-top: 120px; /* Adjusted padding to make space for fixed header */
+            padding-bottom: 50px; /* Adjusted padding to make space for footer */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: scroll; /* Enable vertical scrolling */
+            height: 100vh; /* Ensure main fills the entire viewport height */
+        }
+        h1, h2 {
+            color: #00FF41;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 2px solid #00FF41;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        .contact-links {
+            margin-top: 20px;
+        }
+        .contact-links a {
+            color: #00FF41;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        .contact-links a:hover {
+            color: #fff;
+        }
+
+        /* Language switcher */
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        /* Mobile Styles */
+        @media only screen and (max-width: 600px) {
+            main {
+                padding-top: 200px; /* Adjust padding to make space for fixed header */
+            }
+            header {
+                padding: 15px 0;
+            }
+            .language-switcher {
+                top: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+    <script>
+        function switchLanguage(language) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                if (section.classList.contains(language)) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body onload="switchLanguage('en')">
+    <header>
+        <div class="social-media-links">
+            <a href="https://www.instagram.com/makoty_yt" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/channel/UCpdJns_OtqsbipH6WEWh34Q" target="_blank">YouTube</a>
+        </div>
+        <h1>About Me</h1>
+        <div class="language-switcher">
+            <button onclick="switchLanguage('en')">EN</button>
+            <button onclick="switchLanguage('sk')">SK</button>
+        </div>
+    </header>
+    <main>
+        <!-- About Me Section -->
+        <section class="en">
+            <h2>About Me</h2>
+            <p>A glider pilot, an amateur astronomer, and a person with an interest in aviation.</p>
+            <p></p>
+        </section>
+        <section class="sk" style="display:none;">
+            <h2>O mne</h2>
+            <p>Pilot vetroňa, amatérsky astronóm a človek so záujmom o letectvo.</p>
+            <p></p>
+        </section>
+        <!-- Romans Section -->
+        <section class="en">
+            <h2>Romans 1:24-27</h2>
+            <p>Therefore God gave them up in the lusts of their hearts to impurity, to the dishonoring of</p>
+            <p>their bodies among themselves, because they exchanged the truth about God for a lie and</p>
+	    <p>worshiped and served the creature rather than the Creator, who is blessed for ever! Amen.</p>
+            <br>
+            <p>For this reason God gave them up to dishonorable passions.</p>
+            <p>Their women exchanged natural relations for unnatural, and the men likewise</p>
+            <p>gave up natural relations with women and were consumed with passion for one another,</p>
+	    <p>men committing shameless acts with men and receiving</p>
+	    <p>in their own persons the due penalty for their error.</p>
+
+        </section>
+        <section class="sk" style="display:none;">
+            <h2>Rimanom 1:24-27</h2>
+            <p>Preto ich Boh vydal nečistote podľa žiadostí ich srdca; a tak hanobili svoje vlastné telá tí, čo Božiu pravdu</p>
+            <p>zamenili za lož, uctievali stvorenia a slúžili radšej im ako Stvoriteľovi, ktorý je zvelebený naveky. Amen.</p>
+            <br>
+            <p>Preto ich Boh vydal nehanebným náruživostiam. Ich ženy zamenili prirodzený styk za protiprirodzený.</p>
+            <p>A podobne aj muži zanechali prirodzený styk so ženou a zahoreli žiadostivosťou jeden k druhému:</p>
+            <p>muži s mužmi páchali nehanebnosť. Tak si sami na sebe odniesli zaslúženú odplatu za svoje poblúdenie.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Makoty. All rights reserved. / Všetky práva vyhradené.</p>
+    </footer>
+</body>
+</html
